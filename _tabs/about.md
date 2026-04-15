@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About
-permalink: /about/
+# the default layout is 'page'
+icon: fas fa-info-circle
+order: 4
 ---
 
 ## About Me
@@ -38,7 +38,7 @@ Collaborating with **LATAM Airlines** on inventory optimization across multiple 
 
 - Led development of Deep Learning and Computer Vision solutions
 - Trained, validated, and deployed ML models into production environments
-- Collaborated with multidisciplinary teams to identify business problems and deliver data-driven products
+- Collaborated with multidisciplinary teams to deliver data-driven products
 
 ---
 
