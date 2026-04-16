@@ -8,7 +8,7 @@ categories: [AI Tools, Data Engineering]
 tags: [claude-code, data-engineering, dbt, bigquery, mcp, airflow, gcp, anthropic]
 description: "72% of analytics engineers now prioritize AI coding. How to set up Claude Code with dbt, BigQuery, Airflow — CLAUDE.md templates, hooks, and BigQuery MCP server."
 image:
-  path: https://images.unsplash.com/photo-JQiEhnwnGVs?w=1200&h=630&fit=crop&q=80&fm=webp
+  path: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80&fm=webp
   alt: Data engineer working with laptop in a server room — Claude Code for data engineering complete guide
 canonical: "https://ffrezr.github.io/posts/claude-code-for-data-engineers/"
 ---
@@ -45,7 +45,7 @@ For knowledge workers who want Anthropic's desktop automation agent instead of a
 
 Setting up Claude Code for data engineering takes about 30 minutes and breaks into four steps: install the CLI, configure your working directory, write a data-engineering-specific CLAUDE.md, and connect at least one MCP server for your warehouse. Each step compounds the value of the next.
 
-![Data engineer setting up terminal environment — Claude Code installation for data pipelines](https://images.unsplash.com/photo-dZR_q_RJhrw?w=1200&h=630&fit=crop&q=80&fm=webp)
+![Data engineer setting up terminal environment — Claude Code installation for data pipelines](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=630&fit=crop&q=80&fm=webp)
 
 ### Step 1: Install Claude Code
 
@@ -269,7 +269,7 @@ For the full list of hook event types and configuration options, see the [Claude
 
 The BigQuery MCP server lets Claude Code query your warehouse, list datasets, inspect schemas, and run SQL directly, all without leaving the terminal ([Google Cloud](https://cloud.google.com/blog/products/data-analytics/using-the-fully-managed-remote-bigquery-mcp-server-to-build-data-ai-agents), 2026). Google launched a fully managed remote version in January 2026, meaning the server runs on Google Cloud infrastructure; you don't host or maintain it yourself.
 
-![BigQuery and Claude Code MCP server integration for data engineering workflows](https://images.unsplash.com/photo--BtvO7ot85c?w=1200&h=630&fit=crop&q=80&fm=webp)
+![BigQuery and Claude Code MCP server integration for data engineering workflows](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80&fm=webp)
 
 ### Setup: Managed Remote Server (Recommended)
 
@@ -607,7 +607,7 @@ Browse all posts in the [AI Tools](/categories/ai-tools/) and [Data Engineering]
     {
       "@type": "ImageObject",
       "@id": "https://ffrezr.github.io/posts/claude-code-for-data-engineers/#primaryimage",
-      "url": "https://images.unsplash.com/photo-JQiEhnwnGVs?w=1200&h=630&fit=crop&q=80",
+      "url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80",
       "width": 1200,
       "height": 630,
       "caption": "Data engineer working with laptop in a server room — Claude Code for data engineering guide"
