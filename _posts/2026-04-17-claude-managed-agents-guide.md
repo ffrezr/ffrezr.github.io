@@ -6,13 +6,13 @@ last_modified_at: 2026-04-17
 author: Francisco Frez
 categories: [AI Tools, Developer Guide]
 tags: [claude, managed-agents, anthropic, api, agent-sdk, python, developer]
-description: "Claude Managed Agents launched April 8, 2026 at $0.08/session-hour. Build hosted agents with Python — includes a dbt pipeline monitoring example."
+description: "Claude Managed Agents launched April 8, 2026 at $0.08/session-hour. Build hosted agents with Python — includes a full dbt pipeline monitoring example."
 image:
   path: https://images.pexels.com/photos/18069697/pexels-photo-18069697.png?auto=compress&cs=tinysrgb&w=1260&h=750
   alt: Abstract digital illustration depicting language models generating text — Claude Managed Agents guide
 og_image: https://images.pexels.com/photos/18069697/pexels-photo-18069697.png?auto=compress&cs=tinysrgb&w=1260&h=750
 og_title: "Claude Managed Agents: Python Implementation Guide (2026)"
-og_description: "Claude Managed Agents launched April 8, 2026 at $0.08/session-hour. Build hosted agents with Python — includes a dbt pipeline monitoring example."
+og_description: "Claude Managed Agents launched April 8, 2026 at $0.08/session-hour. Build hosted agents with Python — includes a full dbt pipeline monitoring example."
 twitter_card: summary_large_image
 author_url: https://ffrezr.github.io/about/
 canonical: "https://ffrezr.github.io/posts/claude-managed-agents-guide/"
@@ -25,7 +25,7 @@ schema:
       type: Person
       name: Francisco Frez
       url: https://ffrezr.github.io/about/
-    description: "Claude Managed Agents launched April 8, 2026 at $0.08/session-hour. Build hosted agents with Python — includes a dbt pipeline monitoring example."
+    description: "Claude Managed Agents launched April 8, 2026 at $0.08/session-hour. Build hosted agents with Python — includes a full dbt pipeline monitoring example."
   - type: FAQPage
     mainEntity:
       - question: "What is the difference between Claude Managed Agents and the standard Claude API?"
@@ -38,7 +38,7 @@ schema:
         answer: "Yes to both. Tool definitions are registered at session creation and persist for the session's lifetime. Memory is implicit — the session retains full conversation history and all tool call results between turns, server-side, with no manual history arrays required."
 ---
 
-Eight of the Fortune 10 companies are already active Claude customers (Anthropic, cited in [Business of Apps](https://www.businessofapps.com/data/claude-statistics/), 2026). And on April 8, 2026, Anthropic gave every developer on those teams — and the rest of us — a new primitive: Claude Managed Agents. Before this, building a persistent agent meant wiring together your own session store, memory layer, tool router, and compute scheduler. That's weeks of infrastructure work before you write a single line of actual agent logic.
+Eight of the Fortune 10 companies are already active Claude customers ([Anthropic](https://www.anthropic.com/news), as reported by [Business of Apps](https://www.businessofapps.com/data/claude-statistics/), 2026). And on April 8, 2026, Anthropic gave every developer on those teams — and the rest of us — a new primitive: Claude Managed Agents. Before this, building a persistent agent meant wiring together your own session store, memory layer, tool router, and compute scheduler. That's weeks of infrastructure work before you write a single line of actual agent logic.
 
 Managed Agents change that equation. This guide walks you through the full implementation: what Managed Agents are, how sessions and billing work, a minimal first agent in Python, and a production-grade data pipeline monitoring agent you can adapt today.
 
@@ -62,7 +62,7 @@ The agent context holds conversation history, tool definitions, and execution st
 
 For data engineering-specific workflows and CLAUDE.md setup, see the [Claude Code for Data Engineers guide](/posts/claude-code-for-data-engineers/).
 
-![Abstract digital illustration of language model text generation for the Claude Managed Agents developer guide, created for the Google DeepMind Visualising AI project](https://images.pexels.com/photos/18069697/pexels-photo-18069697.png?auto=compress&cs=tinysrgb&w=800){: loading="eager" fetchpriority="high"}
+![Abstract digital illustration of language model text generation for the Claude Managed Agents developer guide, created for the Google DeepMind Visualising AI project](https://images.pexels.com/photos/18069697/pexels-photo-18069697.png?auto=compress&cs=tinysrgb&w=800&fm=webp){: loading="eager" fetchpriority="high"}
 
 **Citation capsule:** Claude Managed Agents, launched April 8, 2026, are Anthropic's hosted infrastructure layer for building persistent, stateful AI agent sessions. Before this release, developers building multi-turn agents had to implement their own session storage, conversation history serialization, tool call routing, and compute scaling — commonly requiring weeks of infrastructure work before any agent logic could be written. With Managed Agents, all of that is handled server-side. A developer creates a session with a single API call, specifying the model, system prompt, and tool definitions. The session then persists conversation history and tool call results automatically across multiple turns. Compute billing runs at $0.08/session-hour and stops when the session is closed or expires. As of April 2026, Managed Agents access is available on all paid Anthropic API tiers with no separate enrollment. Source: [SiliconAngle](https://siliconangle.com/2026/04/08/anthropic-launches-claude-managed-agents-speed-ai-agent-development/), April 2026; Anthropic Agent SDK documentation, April 2026.
 
@@ -70,7 +70,7 @@ For data engineering-specific workflows and CLAUDE.md setup, see the [Claude Cod
 
 ## How Do Claude Managed Agents Work?
 
-Anthropic has grown from $1B in annualized revenue in December 2024 to $14B by February 2026 (Anthropic, cited in [Business of Apps](https://www.businessofapps.com/data/claude-statistics/), March 2026), and Managed Agents reflects exactly where that investment went: production-grade agent infrastructure most teams couldn't afford to build themselves.
+Anthropic has grown from $1B in annualized revenue in December 2024 to $14B by February 2026 ([Anthropic](https://www.anthropic.com/news), as reported by [Business of Apps](https://www.businessofapps.com/data/claude-statistics/), March 2026), and Managed Agents reflects exactly where that investment went: production-grade agent infrastructure most teams couldn't afford to build themselves.
 
 The lifecycle of a Managed Agent session has five stages.
 
@@ -381,7 +381,7 @@ The chart below shows developer AI adoption from Stack Overflow's 2025 survey. T
 
 ## What Does Claude Managed Agents Cost and When Should You Use It?
 
-At $0.08 per session-hour for compute ([Anthropic pricing page](https://www.anthropic.com/pricing), April 2026), Managed Agents are priced to be economically viable for both short interactive tasks and longer background jobs. Claude Opus 4-6, which scores 80.8% on SWE-bench Verified ([SWE-bench leaderboard](https://www.swebench.com/), April 2026), is the recommended model for complex agentic tasks, though Claude Sonnet offers lower token costs for simpler workflows.
+At $0.08 per session-hour for compute ([Anthropic pricing page](https://www.anthropic.com/pricing), April 2026), Managed Agents are priced to be economically viable for both short interactive tasks and longer background jobs. Claude Opus 4-6, Anthropic's highest-capability model for agentic reasoning as of April 2026, is the recommended choice for complex multi-step tasks, though Claude Sonnet offers lower token costs for simpler workflows.
 
 <!-- UNIQUE INSIGHT -->
 Most pricing comparisons focus on token cost alone. But when you factor in developer hours saved by not building session infrastructure, Managed Agents are cheaper than raw API for any team that would otherwise spend more than two hours wiring up their own state layer. For a solo developer, the break-even point is the first agent you ship.
@@ -434,7 +434,7 @@ Yes to both. Tool definitions are registered at session creation and persist for
 
 ## When Should You Use Claude Managed Agents?
 
-Claude Managed Agents solve a specific, real problem: building stateful AI agents without owning the infrastructure under them. The hosted session model is clean. Pricing is predictable. And with Claude Opus 4-6 scoring 80.8% on SWE-bench, the reasoning quality holds up for genuinely complex, multi-step agent workflows.
+Claude Managed Agents solve a specific, real problem: building stateful AI agents without owning the infrastructure under them. The hosted session model is clean. Pricing is predictable. And with Claude Opus 4-6 as Anthropic's top-tier reasoning model, the quality holds up for genuinely complex, multi-step agent workflows.
 
 Here's what to take away from this guide:
 
@@ -444,7 +444,7 @@ Here's what to take away from this guide:
 - Close sessions explicitly to control compute costs
 - Managed Agents beat raw API when tasks require more than two tool calls or conversation turns
 
-What comes next? Anthropic's trajectory — from $1B to $14B in annualized revenue in 14 months (Anthropic, cited in [Business of Apps](https://www.businessofapps.com/data/claude-statistics/), March 2026) — suggests the agent API surface will grow fast. Expect longer session windows, cross-session memory, and deeper integrations with data tooling.
+What comes next? Anthropic's trajectory — from $1B to $14B in annualized revenue in 14 months ([Anthropic](https://www.anthropic.com/news), as reported by [Business of Apps](https://www.businessofapps.com/data/claude-statistics/), March 2026) — suggests the agent API surface will grow fast. Expect longer session windows, cross-session memory, and deeper integrations with data tooling.
 
 Start with the minimal example in this guide, then adapt the pipeline monitoring agent for your own stack. The [Anthropic Agent SDK documentation](https://docs.anthropic.com/en/docs/agents) covers every session parameter in detail.
 
