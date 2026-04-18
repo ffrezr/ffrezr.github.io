@@ -30,8 +30,8 @@ Claude Cowork is a desktop agent, not a chatbot. While 71% of organizations now 
 
 The Claude Desktop app has three tabs: Chat, Cowork, and Code.
 
-![Claude Desktop app with Chat, Cowork, and Code tabs](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-screenshot.png)
-_The Cowork tab runs autonomous tasks; Chat and Code serve different workflows._
+![Claude Cowork main interface inside the Claude Desktop app showing the task input prompt and recent task history](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-screenshot.png)
+_The Cowork tab inside Claude Desktop — task input, recents, and Dispatch entry point._
 
 - **Chat** is for back-and-forth conversation. You ask, it answers.
 - **Cowork** is for knowledge workers who want results, not instructions.
@@ -58,7 +58,8 @@ Claude Cowork setup takes under 15 minutes: download Claude Desktop, open the Co
 5. *(Recommended)* Create three core context files so the agent knows who you are — see below. Skipping this step is optional but is the main reason Cowork feels generic rather than personalized
 6. *(Optional)* Assign Cowork to a Project for scoped context
 
-![Cowork assigned to a Claude Project for scoped context](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-project.png)
+![Cowork Projects view in Claude Desktop showing a project assigned for scoped context](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-project.png)
+_Assign Cowork to a Project so it loads scoped context files at every session._
 
 ### How to Create Context Files
 
@@ -91,8 +92,6 @@ Cowork ships with native skills for the four most common office file types. You 
 
 All file processing happens in a sandboxed local VM. Your files don't leave your machine unless you explicitly direct Cowork to send them somewhere through a connector.
 
-![Built-in file skills for Excel, Word, PowerPoint, and PDF in Cowork](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-skills.png)
-
 ### Custom Skills via /skill-creator
 
 You can build your own reusable skills using the `/skill-creator` command. A skill is a saved, named instruction set that the agent calls on demand. Useful examples include:
@@ -100,11 +99,17 @@ You can build your own reusable skills using the `/skill-creator` command. A ski
 - A "weekly report" skill that pulls data from Snowflake, formats a summary table, and saves a DOCX
 - A "prospect research" skill that queries HubSpot, checks LinkedIn context files, and drafts an outreach email
 
+![Cowork Skills panel in Claude Desktop showing the skill-creator skill open for editing](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-skills.png)
+_Use `/skill-creator` to define reusable, named instruction sets the agent can call on demand._
+
 Skills that combine two or more connectors tend to deliver the sharpest productivity gains. The step where most users stall is the connector configuration, not the skill logic itself — getting the OAuth handshake right for Google Drive or Salesforce is the friction point, not the task definition.
 
 ### Connectors: 38+ Integrations
 
 Cowork connects to 38+ external services via the Model Context Protocol (MCP). MCP SDK downloads reached [approximately 97 million per month](https://www.digitalapplied.com/blog/mcp-97-million-downloads-model-context-protocol-mainstream) in March 2026 — up from roughly 2 million at launch in November 2024 — reflecting rapid adoption as an open integration standard.
+
+![Cowork Connectors Directory showing popular integrations including Google Drive, Gmail, HubSpot, Linear, Zoom, Figma, and Notion](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-connectors-directory.png)
+_The in-app Connectors Directory — browse Anthropic & partner integrations, filter by category, and install with one click._
 
 Current connector categories include:
 
@@ -118,7 +123,8 @@ Current connector categories include:
 
 A plugin marketplace launched in February 2026 with department bundles for HR, Sales, Finance, and Engineering. These bundles pre-configure the most relevant connectors and skills for each function.
 
-![Connector and integration options available from Cowork](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-connectors.png)
+![Cowork Connectors panel showing Gmail integration with read and write tool permissions](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-connectors.png)
+_Each connector exposes granular tool permissions — read-only tools auto-allow, while write/delete tools require approval._
 
 ---
 
@@ -136,7 +142,8 @@ Type `/schedule` followed by your task description and cadence. Example:
 
 Cowork registers the schedule and runs the task automatically at the specified time.
 
-![Scheduling a recurring task with the /schedule command](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-shceduled-tasks.png)
+![Cowork Scheduled tasks view in Claude Desktop with the warning that tasks only run while the computer is awake](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-shceduled-tasks.png)
+_The Scheduled view warns up front: tasks only run while your computer is awake — there is no cloud fallback._
 
 ### Known Limitation: Machine Must Be Awake
 
