@@ -8,7 +8,7 @@ categories: [AI Tools, Productivity]
 tags: [claude, cowork, anthropic, ai-productivity, automation]
 description: "Complete guide to Claude Cowork: Anthropic's desktop AI agent. Learn setup, skills, 38+ connectors, and scheduling to automate hours of work each week."
 image:
-  path: https://ffrezr.github.io/assets/img/posts/claude-cowork-og.png
+  path: https://ffrezr.github.io/assets/img/posts/how-to-use-claude-cowork/claude-cowork-og.png
   alt: Claude Cowork complete guide 2026 — Anthropic desktop AI agent
 canonical: "https://ffrezr.github.io/posts/how-to-use-claude-cowork/"
 ---
@@ -19,7 +19,7 @@ Claude Cowork is Anthropic's autonomous desktop AI agent for knowledge workers, 
 > - Claude Cowork lives inside Claude Desktop under its own tab, separate from Chat and Code
 > - Setup requires three context files and at least one connector to unlock its full potential
 > - 92% of companies plan to increase AI investments in the next three years, yet only 1% report reaching AI maturity ([McKinsey Superagency, Jan 2025](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/superagency-in-the-workplace-empowering-people-to-unlock-ais-full-potential-at-work)) — Cowork targets that gap
-> - Computer Use (browser automation) is currently macOS-only
+> - Computer Use (browser automation) is available on both macOS and Windows (Windows support added April 3, 2026) for Pro and Max users, still in research preview
 > - Scheduled tasks need your machine to be awake and running
 
 ---
@@ -28,11 +28,14 @@ Claude Cowork is Anthropic's autonomous desktop AI agent for knowledge workers, 
 
 Claude Cowork is a desktop agent, not a chatbot. While 71% of organizations now regularly deploy generative AI ([McKinsey State of AI, 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai)), most deployments rely on simple chat interfaces that require the user to do the follow-up work. Cowork changes that by executing multi-step tasks autonomously: reading your local files, calling connected apps, and returning finished output.
 
-The Claude Desktop app has three tabs: Chat, Code, and Cowork.
+The Claude Desktop app has three tabs: Chat, Cowork, and Code.
+
+![Claude Desktop app with Chat, Cowork, and Code tabs](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-screenshot.png)
+_The Cowork tab runs autonomous tasks; Chat and Code serve different workflows._
 
 - **Chat** is for back-and-forth conversation. You ask, it answers.
-- **Code** is a CLI-style interface for developers and technical users.
 - **Cowork** is for knowledge workers who want results, not instructions.
+- **Code** is a CLI-style interface for developers and technical users.
 
 Think of Chat as a consultant you can question. Cowork, by contrast, is the assistant who actually does the work. For a broader look at tools in this space, see the [AI Tools](/categories/ai-tools/) category.
 
@@ -44,16 +47,18 @@ No. Claude Code is a command-line tool aimed at software developers. It reads an
 
 ## How to Set Up Claude Cowork in Under 15 Minutes
 
-Claude Cowork setup takes five steps and under 15 minutes: download Claude Desktop, open the Cowork tab, designate a working folder, create three plain-text context files (about-me, brand-voice, working-preferences), and connect at least one integration. Most users skip the context files — that single omission is the most common reason the agent feels generic rather than personalized.
+Claude Cowork setup takes under 15 minutes: download Claude Desktop, open the Cowork tab, designate a working folder, and connect at least one integration. Cowork will run without any further configuration. The optional — but highly recommended — final step is creating three plain-text context files (about-me, brand-voice, working-preferences). Most users skip them, and that single omission is the most common reason the agent feels generic rather than personalized.
 
 ### Step-by-Step Setup
 
 1. Download Claude Desktop from anthropic.com (Mac or Windows)
 2. Open the app and click the **Cowork** tab
 3. Designate a working folder on your local machine
-4. Create your three core context files (see below)
-5. Connect at least one integration via the **+** button
-6. Optionally, assign Cowork to a Project for scoped context
+4. Connect at least one integration via the **+** button
+5. *(Recommended)* Create three core context files so the agent knows who you are — see below. Skipping this step is optional but is the main reason Cowork feels generic rather than personalized
+6. *(Optional)* Assign Cowork to a Project for scoped context
+
+![Cowork assigned to a Claude Project for scoped context](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-project.png)
 
 ### How to Create Context Files
 
@@ -86,6 +91,8 @@ Cowork ships with native skills for the four most common office file types. You 
 
 All file processing happens in a sandboxed local VM. Your files don't leave your machine unless you explicitly direct Cowork to send them somewhere through a connector.
 
+![Built-in file skills for Excel, Word, PowerPoint, and PDF in Cowork](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-skills.png)
+
 ### Custom Skills via /skill-creator
 
 You can build your own reusable skills using the `/skill-creator` command. A skill is a saved, named instruction set that the agent calls on demand. Useful examples include:
@@ -97,7 +104,7 @@ Skills that combine two or more connectors tend to deliver the sharpest producti
 
 ### Connectors: 38+ Integrations
 
-Cowork connects to 38+ external services via the Model Context Protocol (MCP). MCP reached [100 million monthly downloads](https://www.anthropic.com/news/introducing-anthropic-labs) as of early 2026, reflecting rapid adoption as an open integration standard.
+Cowork connects to 38+ external services via the Model Context Protocol (MCP). MCP SDK downloads reached [approximately 97 million per month](https://www.digitalapplied.com/blog/mcp-97-million-downloads-model-context-protocol-mainstream) in March 2026 — up from roughly 2 million at launch in November 2024 — reflecting rapid adoption as an open integration standard.
 
 Current connector categories include:
 
@@ -110,6 +117,8 @@ Current connector categories include:
 | Data Warehouses | Snowflake, BigQuery, Amplitude |
 
 A plugin marketplace launched in February 2026 with department bundles for HR, Sales, Finance, and Engineering. These bundles pre-configure the most relevant connectors and skills for each function.
+
+![Connector and integration options available from Cowork](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-connectors.png)
 
 ---
 
@@ -127,6 +136,8 @@ Type `/schedule` followed by your task description and cadence. Example:
 
 Cowork registers the schedule and runs the task automatically at the specified time.
 
+![Scheduling a recurring task with the /schedule command](/assets/img/posts/how-to-use-claude-cowork/claude-cowork-shceduled-tasks.png)
+
 ### Known Limitation: Machine Must Be Awake
 
 Scheduled tasks skip silently if your machine is asleep or offline at run time. There's no catch-up mechanism. For more on building reliable [productivity workflows](/categories/productivity/), see the Productivity category. If you schedule a daily morning report and your laptop is closed, that day's run won't happen. Until Anthropic adds a cloud execution option, treat schedules as convenience automation rather than mission-critical pipelines.
@@ -137,19 +148,19 @@ Scheduled tasks skip silently if your machine is asleep or offline at run time. 
 
 Cowork's Computer Use feature lets it control your browser, click through web apps, and automate tasks that don't have an API connector. This is the most powerful feature in the product and, at the same time, the most restricted.
 
-**Computer Use is macOS only.** Windows users don't have access to this feature as of April 2026.
+**Computer Use works on macOS and Windows** for Pro and Max users. Windows support shipped on April 3, 2026, bringing parity with the original macOS release. The feature is still labeled research preview on both platforms.
 
-On Mac, the agent can:
+On either platform, the agent can:
 
 - Navigate web apps and fill forms
 - Extract data from sites without an API
 - Chain browser actions across multiple tabs or services
 
-Reliability varies by site complexity. Simple, well-structured web apps work well. Dynamic single-page apps with heavy JavaScript can cause errors. Treat Computer Use as a capable beta feature, not a production-grade automation layer.
+Reliability varies by site complexity. Simple, well-structured web apps work well. Dynamic single-page apps with heavy JavaScript can cause errors. Treat Computer Use as a capable research preview, not a production-grade automation layer.
 
 ### What About Mobile?
 
-Cowork's mobile control feature, called Dispatch, exists but is unreliable. Anthropic labels it a research preview with limited, inconsistent success rates. Don't build workflows that depend on Dispatch for anything time-sensitive or high-stakes.
+Cowork's mobile control feature, called Dispatch, lets you send tasks to your desktop agent from your phone and return later to the completed work. It relies on your desktop being awake and signed in. Anthropic still labels Dispatch a research preview, so treat it as convenience automation rather than a dependency for time-sensitive or high-stakes workflows.
 
 ---
 
@@ -169,23 +180,23 @@ The audit log exclusion reflects how quickly Cowork shipped. Compliance tooling 
 
 ## Claude Cowork vs. Microsoft Copilot and Gemini for Business
 
-As of early 2026, the AI productivity assistant market has three serious desktop contenders: Claude Cowork, Microsoft 365 Copilot ($30/user/month), and Gemini for Business ($24/user/month). Cowork starts at $20/month and is the only one offering autonomous multi-step task execution, a plugin marketplace, and 38+ cross-platform connectors outside a single vendor's ecosystem. Here's how they compare on dimensions that matter most for knowledge workers.
+As of early 2026, the AI productivity assistant market has three serious desktop contenders: Claude Cowork, Microsoft 365 Copilot (Enterprise add-on at $30/user/month on top of an existing E3/E5 seat; Copilot Business starts at $21/user/month), and Google Workspace with Gemini bundled in (Business Standard at $16.80/user/month, Business Plus at $26.40/user/month). Cowork starts at $20/month and is the only one offering autonomous multi-step task execution, a plugin marketplace, and 38+ cross-platform connectors outside a single vendor's ecosystem. Here's how they compare on dimensions that matter most for knowledge workers.
 
-| Feature | Claude Cowork | Microsoft 365 Copilot | Gemini for Business |
+| Feature | Claude Cowork | Microsoft 365 Copilot | Google Workspace + Gemini |
 |---|---|---|---|
 | Primary user type | Knowledge workers | Microsoft 365 users | Google Workspace users |
 | Autonomous task execution | Yes (multi-step) | Partial (within M365 apps) | Partial (within Workspace) |
 | File access | Local sandboxed VM | SharePoint and OneDrive | Google Drive |
 | Scheduling | Yes (/schedule command) | Limited | Limited |
-| Browser automation | Yes (macOS only) | No | No |
+| Browser automation | Yes (macOS and Windows, research preview) | No | No |
 | Custom skills | Yes (/skill-creator) | No | No |
 | Connector count | 38+ | Deep M365 stack | Deep Workspace stack |
 | Plugin marketplace | Yes (Feb 2026) | No | No |
 | Enterprise audit logs | No (gap) | Yes | Yes |
-| Starting price | $20/month (Pro) | $30/user/month | $24/user/month |
-| Mobile control | Unreliable (research preview) | Yes (via M365 mobile) | Yes (via Workspace mobile) |
+| Starting price | $20/month (Pro) | $30/user/month (Enterprise add-on) | From $8.40/user/month (Gemini bundled) |
+| Mobile control | Dispatch (research preview) | Yes (via M365 mobile) | Yes (via Workspace mobile) |
 
-*Pricing as of April 2026. Verify current rates at [Microsoft 365 Copilot pricing](https://www.microsoft.com/en-us/microsoft-365/business/copilot-for-microsoft-365) and [Google Workspace pricing](https://workspace.google.com/pricing).*
+*Pricing as of April 2026. Google discontinued the standalone Gemini Business add-on in early 2026 and bundled Gemini into paid Workspace plans. Verify current rates at [Microsoft 365 Copilot pricing](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing-new) and [Google Workspace pricing](https://workspace.google.com/pricing).*
 
 **The practical summary:** Copilot and Gemini are deeper inside their own ecosystems. If you live in Microsoft 365 or Google Workspace, those tools have structural advantages. Cowork's edge is breadth of connectors, autonomous multi-step execution, and the scheduler — making it the stronger choice for users who span multiple platforms or need tasks completed without monitoring the process.
 
@@ -218,7 +229,7 @@ No. Cowork requires a paid Claude plan starting at $20/month (Pro). There's no f
 
 ### Does Claude Cowork work on Windows?
 
-Cowork's core features — file processing, connectors, scheduling, and custom skills — work on both Mac and Windows. The exception is Computer Use (browser automation), which is macOS-only as of April 2026. Windows users can still automate tasks through the 38+ API-based connectors.
+Yes. Cowork runs on both macOS and Windows, including Computer Use (browser automation) — Windows support for Computer Use shipped on April 3, 2026 for Pro and Max users and is still a research preview on both platforms. File processing, connectors, scheduling, and custom skills work identically across the two platforms.
 
 ### How do I schedule a recurring task in Claude Cowork?
 
@@ -234,7 +245,7 @@ File processing happens in a local sandboxed VM, so files don't leave your machi
 
 Cowork is most effective when you invest five minutes upfront in the context file setup, one hour configuring two or three connectors for your most-used services, and one session building a custom skill for your most repetitive weekly task. That's roughly 90 minutes of setup for potentially hours of recovered time each week. For context: 47% of surveyed employees expect AI to replace at least 30% of their daily work within a year ([McKinsey Superagency, 2025](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/superagency-in-the-workplace-empowering-people-to-unlock-ais-full-potential-at-work)) — the window to build this fluency is now.
 
-The product launched in January 2026 and is still labeled a research preview. The compliance gaps, mobile unreliability, and macOS-only browser automation will improve. What exists today is already capable enough to handle real work — go in with realistic expectations about the edges.
+The product launched in January 2026 and is still labeled a research preview. The compliance gaps and the rough edges around Dispatch and research-preview Computer Use will improve over time. What exists today is already capable enough to handle real work — go in with realistic expectations about the edges.
 
 If you're a data engineer or analyst, the Snowflake and BigQuery connectors combined with the `/schedule` command cover a genuinely useful set of data-to-report workflows. That's the best starting point. Browse all posts tagged [claude](/tags/claude/) for related deep-dives as they're published. You can also find more posts under the [automation](/tags/automation/) and [AI productivity](/tags/ai-productivity/) tags.
 
@@ -341,7 +352,7 @@ If you're a data engineer or analyst, the Snowflake and BigQuery connectors comb
           "name": "Does Claude Cowork work on Windows?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cowork's core features — file processing, connectors, scheduling, and custom skills — work on both Mac and Windows. The exception is Computer Use (browser automation), which is macOS-only as of April 2026. Windows users can still automate tasks through the 38+ API-based connectors."
+            "text": "Yes. Cowork runs on both macOS and Windows, including Computer Use (browser automation) — Windows support for Computer Use shipped on April 3, 2026 for Pro and Max users and is still a research preview on both platforms. File processing, connectors, scheduling, and custom skills work identically across the two platforms."
           }
         },
         {
@@ -365,7 +376,7 @@ If you're a data engineer or analyst, the Snowflake and BigQuery connectors comb
     {
       "@type": "ImageObject",
       "@id": "https://ffrezr.github.io/posts/how-to-use-claude-cowork/#primaryimage",
-      "url": "https://ffrezr.github.io/assets/img/posts/claude-cowork-og.png",
+      "url": "https://ffrezr.github.io/assets/img/posts/how-to-use-claude-cowork/claude-cowork-og.png",
       "width": 1200,
       "height": 630,
       "caption": "Claude Cowork complete guide 2026 — Anthropic desktop AI agent"
