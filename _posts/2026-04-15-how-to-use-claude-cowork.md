@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to Use Claude Cowork: The Complete Guide (2026)"
+title: "How to Use Claude Cowork: The Complete Guide"
 date: 2026-04-15
 last_modified_at: 2026-04-15
 author: Francisco Frez
@@ -267,7 +267,7 @@ If you're a data engineer or analyst, the Snowflake and BigQuery connectors comb
     {
       "@type": "BlogPosting",
       "@id": "https://ffrezr.github.io/posts/how-to-use-claude-cowork/#article",
-      "headline": "How to Use Claude Cowork: The Complete Guide (2026)",
+      "headline": "How to Use Claude Cowork: The Complete Guide",
       "description": "Complete guide to Claude Cowork: Anthropic's desktop AI agent. Learn setup, skills, 38+ connectors, and scheduling to automate hours of work each week.",
       "datePublished": "2026-04-15",
       "dateModified": "2026-04-15",
@@ -329,7 +329,7 @@ If you're a data engineer or analyst, the Snowflake and BigQuery connectors comb
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "How to Use Claude Cowork: The Complete Guide (2026)",
+          "name": "How to Use Claude Cowork: The Complete Guide",
           "item": "https://ffrezr.github.io/posts/how-to-use-claude-cowork/"
         }
       ]
